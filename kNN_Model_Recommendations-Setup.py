@@ -39,7 +39,7 @@ knn_reg.fit(X_train, y_train)
 y_pred = knn_reg.predict(X_test)
 
 """
-Evaluating the kNeighborsRegressor model
+evaluating the kNeighborsRegressor model
 """
 # out-of-sample evaluation
 rmse_test = sqrt(mean_squared_error(y_test, y_pred))
@@ -53,7 +53,7 @@ rmse = sqrt(mean_squared_error(y, y_pred_whole))
 print("Root-mean-square error = " + str(rmse))
 
 """
-Fitting the final unsupervised model NearestNeighbors to find the most similar movies of each ones using the whole dataset
+fitting the final unsupervised model NearestNeighbors to find the most similar movies of each ones using the whole dataset
 """
 model_knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=11, n_jobs=-1)
 model_knn.fit(movie_features_df_matrix)
