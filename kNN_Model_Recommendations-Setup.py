@@ -5,9 +5,7 @@ It originally runs on Jupyter Notebook, thanks to which each code snippet can be
 For this particular file to work, it must be linked to the code related to step 1 of the film recommendation system, available in the file "Weighted_Average_Score-Calculation.py".
 """
 
-"""
-importing the needed libraries
-"""
+"""importing the needed libraries"""
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error
@@ -17,30 +15,22 @@ import numpy as np
 import pandas as pd
 import pickle
 
-"""
-creating a pivot table
-"""
+"""creating a pivot table"""
 movies_pivot = mostRatedMovies.groupBy('title').pivot('userId').sum('rating').fillna(0)
 movie_features_df = movies_pivot.toPandas().set_index('title')
 movie_features_df_matrix = csr_matrix(movie_features_df.values)
 
-"""
-splitting the "mostRatedMovies" dataset into a train and test sets
-"""
+"""splitting the "mostRatedMovies" dataset into a train and test sets"""
 X = mostRatedMovies.toPandas()[['userId', 'movieId']].values
 y = mostRatedMovies.toPandas()['rating'].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
-"""
-fitting the data to the supervised kNeighborsRegressor model (to get predictions of the ratings)
-"""
+"""fitting the data to the supervised kNeighborsRegressor model (to get predictions of the ratings)"""
 knn_reg = KNeighborsRegressor(n_neighbors=11, n_jobs=-1) # the first neighbor of a movie is the movie itself, so we specify 11
 knn_reg.fit(X_train, y_train)
 y_pred = knn_reg.predict(X_test)
 
-"""
-evaluating the kNeighborsRegressor model
-"""
+"""evaluating the kNeighborsRegressor model"""
 # out-of-sample evaluation
 rmse_test = sqrt(mean_squared_error(y_test, y_pred))
 print("Out-of-sample RMSE = " + str(rmse_test))
@@ -52,9 +42,7 @@ y_pred_whole = knn_reg_whole.predict(X)
 rmse = sqrt(mean_squared_error(y, y_pred_whole))
 print("Root-mean-square error = " + str(rmse))
 
-"""
-fitting the final unsupervised model NearestNeighbors to find the most similar movies of each ones using the whole dataset
-"""
+"""fitting the final unsupervised model NearestNeighbors to find the most similar movies of each ones using the whole dataset"""
 model_knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=11, n_jobs=-1)
 model_knn.fit(movie_features_df_matrix)
 
