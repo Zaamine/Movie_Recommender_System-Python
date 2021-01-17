@@ -11,7 +11,7 @@ Repo for the Movies Recommender System implemented in Python which simulates an 
 
 <!-- Articles related (written by me): [Medium](), [Towards Data Science]() -->
 
-![](/images/recommender_system-screenshot_1.PNG)
-![](/images/recommender_system-screenshot_2.PNG)
+![](https://github.com/Zaamine/Zaamine/blob/main/images/recommender_system-screenshot_1.PNG)
+![](https://github.com/Zaamine/Zaamine/blob/main/images/recommender_system-screenshot_2.PNG)
 
 The idea behind the codes I uploaded in this repo is to show you what are the important aspects to take into account in order to concretely implement the machine learning and deep learning models used in my movies recommender system, so it helps you implement your very own version of it. It's not about just cloning the repo. The project presented here actually required 4 months of research and work during my internship in Data Science at Deutsche Telekom, so I only shared the main points.
