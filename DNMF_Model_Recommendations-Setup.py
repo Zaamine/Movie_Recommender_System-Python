@@ -127,7 +127,7 @@ history = dnmf_model_final.fit([userIds_vector, movieIds_vector], ratings_vector
 generating the predicted rating related to a (userId, movieId) couple chosed,
 which will be used for further recommendations
 """
-# choosing a (userId, movieId) couple non already existent in the ratings.csv file, for exemple (1, 10)
+# choosing a (userId, movieId) couple not already existent in the ratings.csv file, for exemple (1, 10)
 userId_chosed = 1
 userIdChosed_vector = np.asarray([userId_chosed]).astype(np.int32)
 
