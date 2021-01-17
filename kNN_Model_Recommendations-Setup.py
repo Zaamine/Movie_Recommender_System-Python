@@ -46,6 +46,7 @@ print("Root-mean-square error = " + str(rmse))
 model_knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=11, n_jobs=-1)
 model_knn.fit(movie_features_df_matrix)
 
+"""generating recommendations related to a movie chosed"""
 # choosing a title from our movie matrix
 favoriteMovie = 'Iron Man (2008)'
 query_index = movie_features_df.index.get_loc(favoriteMovie)
@@ -58,7 +59,7 @@ for i in range(0, len(distances.flatten())):
     else:
         print('{0}: {1}, with distance of {2}:'.format(i, movie_features_df.index[indices.flatten()[i]], distances.flatten()[i]))
 
-
+"""saving the files related to the model"""
 # saving the table to CSV file for later access
 movie_features_df.to_csv(os.path.join(trained_datapath, 'kNNmovieMatrix.csv'))
 
