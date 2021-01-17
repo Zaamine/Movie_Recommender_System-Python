@@ -1,3 +1,8 @@
+"""
+This code is a snippet of the condensed version of the step 1 of Amine Zaamoun's Movies Recommender System and was created in January 16, 2021.
+It originally runs on Jupyter Notebook, thanks to which each code snippet can be broken down and analyzed in a different cell.
+"""
+
 """importing the needed libraries"""
 import os
 from pyspark.sql.functions import mean, col
