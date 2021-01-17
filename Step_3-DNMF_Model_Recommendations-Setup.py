@@ -15,7 +15,7 @@ import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
 
-"""initializing the random seed in order to obtain renewable values"""
+"""initializing the random seed in order to obtain reproductible values"""
 tf.random.set_seed(42)
 
 """path config"""
