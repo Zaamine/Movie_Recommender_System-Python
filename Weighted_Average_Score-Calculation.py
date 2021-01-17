@@ -10,6 +10,7 @@ from pyspark.sql.functions import mean, col
 """path config"""
 data_path = os.environ['DATA_PATH']
 movies_datapath = os.path.join(data_path, 'Movies/MovieLens/movies_data-100k')
+trained_datapath = os.path.join(movies_datapath, 'Already_Trained')
 
 """loading the datasets"""
 ratings = spark.read.load(os.path.join(movies_datapath, 'ratings.csv'), format='csv', header=True, inferSchema=True).drop("timestamp")
@@ -37,5 +38,4 @@ C = mean_df[0]['mean']
 movies_cleaned_df = mostRatedMovies.withColumn("weighted_average", ((mostRatedMovies['avg(rating)']*mostRatedMovies['count']) + (C*m)) / (mostRatedMovies['count']+m))
 
 """saving the table in CSV file for later access"""
-trained_datapath = os.path.join(movies_datapath, 'Already_Trained')
 movies_cleaned_pd.to_csv(os.path.join(trained_datapath, 'MostPopularMovies.csv'), index=False)
