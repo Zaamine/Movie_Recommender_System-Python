@@ -1,4 +1,8 @@
-
+"""
+This code is a snippet of the condensed version of Amine Zaamoun's deployed Movies Recommender System and was created in January 18, 2021.
+This file doesn't work by itself in a Flask app, it needs to be at least associated to html templates.
+The idea behind this file is just to show you how I used the pre-computed results of the already trained machine learning and deep learning models to give movie recommendations.
+"""
 
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request
