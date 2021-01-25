@@ -9,7 +9,7 @@ Repo for the Movie Recommender System implemented in Python which simulates an o
 * Deployed the final system using the pre-computed results from the precedent models on Flask
 * Used the collaborative filtering method to predict the ratings made on a 5-star scale related to each possible (userId, movieId) couple of the dataset and obtaining an RMSE of 0.87
 
-The article I wrote about this project on [Medium](https://amine-zaamoun.medium.com/): [Transformation of a simple movie dataset into a functional Recommender System](https://amine-zaamoun.medium.com/transformation-of-a-simple-movie-dataset-into-a-functional-recommender-system-89c2a5a668c)
+The article I wrote about this project on [Medium](https://amine-zaamoun.medium.com/), republished by the [Towards Data Science](https://towardsdatascience.com/) platform, a reference in this field: [Transformation of a simple movie dataset into a functional Recommender System](https://amine-zaamoun.medium.com/transformation-of-a-simple-movie-dataset-into-a-functional-recommender-system-89c2a5a668c)
 
 ![](https://github.com/Zaamine/Zaamine/blob/main/images/recommender_system-screenshot_1.PNG)
 ![](https://github.com/Zaamine/Zaamine/blob/main/images/recommender_system-screenshot_2.PNG)
